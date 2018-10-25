@@ -1,0 +1,14 @@
+<%
+var page = page ? page : 'index';
+include('./_config', {page: page});
+%>
+<head lang="ja">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title><%= PAGE_DATA.title; %></title>
+<meta name="description" content="<%= PAGE_DATA.description; %>">
+<link rel="stylesheet" href="<%= PATH; %>/css/style.css">
+</head>
+
+

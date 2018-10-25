@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+// ---------------------------------------------------------------
+//
+//  Import Settings
+//
+// ---------------------------------------------------------------
+
+@import "settings/define";
+@import "settings/view";
+@import "settings/color";
+@import "settings/font";
+//{settings}
+
+// ---------------------------------------------------------------
+//
+//  Import Core
+//
+// ---------------------------------------------------------------
+
+@import "cores/class";
+@import "cores/function";
+@import "cores/snippet";
+//{cores}
+
+//  Base Style
+// ---------------------------------------------------------------
+
+@import "bases/reset";
+@import "bases/base";
+@import "bases/layout";
+//{bases}
+
+//  Globals
+// ---------------------------------------------------------------
+
+@import "globals/header";
+@import "globals/footer";
+//{globals}
+
+

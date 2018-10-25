@@ -1,0 +1,320 @@
+@charset "UTF-8";
+/*
+#overview
+サイト幅設定
+
+サイトの幅に関する変数
+*/
+/*
+#styleguide
+ページ幅
+
+$page_min_width : ページの最小幅 1200px;
+$contents_max_width  : ページ内コンテンツの幅 900px;
+```
+none
+```
+*/
+/*
+#styleguide
+ブレークポイント
+
+ピクセル無しで記述
+$break_point_default : ブレークポイント
+```
+none
+```
+*/
+/*
+#overview
+色設定
+
+サイトの色について変数を設定しています。
+*/
+/*
+#colors
+テーマ色
+*/
+/*
+#colors
+フォントカラー
+*/
+/*
+#colors
+背景色
+*/
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url(../fonts/NotoSansCJKjp-Medium-subset.woff) format("woff");
+  font-weight: 500; }
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url(../fonts/NotoSansCJKjp-DemiLight-subset.woff) format("woff");
+  font-weight: 300; }
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url(../fonts/NotoSansCJKjp-Bold-subset.woff) format("woff");
+  font-weight: 700; }
+/*
+#overview
+フォント設定
+
+フォントに関する変数を設定しています。
+*/
+/*
+#styleguide
+font-family
+
+$font_family_default: "Hiragino Maru Gothic W4 JIS2004", "fooooo", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_family_meiryo: "メイリオ", "Meiryo", "Osaka", Verdana, "ＭＳ Ｐゴシック", "MS P Gothic", Arial, Helvetica, sans-serif;
+$font_family_number: Arial, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+
+```
+none
+```
+*/
+/*
+#styleguide
+font-size
+
+$font_size_default: 14px;
+$font_size_l: 18px;
+$font_size_m: 16px;
+$font_size_s: 13px;
+
+```
+none
+```
+*/
+/*
+#styleguide
+line-height
+
+$line_height_default: 1.6;
+
+```
+none
+```
+*/
+/*
+#styleguide
+font-weight
+
+$font_weight_default: 500;
+
+```
+none
+```
+*/
+/*
+#overview
+スニペット
+
+scssスニペット
+命名規則はアンダースコアです。
+*/
+/*
+#styleguide
+_radius($num: 0)
+
+  -webkit-border-radius: $num;
+  -moz-border-radius: $num;
+  border-radius: $num;
+```
+none
+```
+*/
+/*
+#styleguide
+_box-sizing($param: border-box)
+
+```
+none
+```
+*/
+/*
+#styleguide
+_square($num: 0)
+
+widthとheightに同じ値を与えます。
+```
+none
+```
+*/
+/*
+#styleguide
+_transition($prop: all, $duration: 0, $delay: 0)
+
+```
+none
+```
+*/
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  width: 100%; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline; }
+
+h1, h2, h3, h4, h5, h6, form {
+  font-weight: 300; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  text-align: left;
+  width: 100%; }
+
+img {
+  vertical-align: top;
+  outline: none;
+  border-width: 0 0 0 0; }
+
+br {
+  letter-spacing: normal; }
+
+ol, ul, li {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: " "; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a, a:link, a:active, a:visited {
+  outline: none; }
+
+a:focus {
+  outline: none; }
+
+a:hover, a:active {
+  outline: 0; }
+
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline; }
+
+button, input {
+  line-height: normal; }
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box; }
+
+/* ---------------------------------------------------------------
+
+  Base setting
+
+--------------------------------------------------------------- */
+/*  base style
+------------------------------------------ */
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; }
+
+body {
+  font-family: "Arial", "HiraKakuPro-W3", "ヒラギノ角ゴ ProN W3", "Noto Sans JP", YuGothic, "Yu Gothic", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  background: #fff;
+  color: #303335;
+  font-weight: 300;
+  min-width: 1140px; }
+  @media screen and (max-width: 991px) {
+    body {
+      min-width: 100%; } }
+  @media screen and (max-width: 740px) {
+    body {
+      min-width: 100%;
+      font-size: 15px; } }
+
+/*  Anchor default
+------------------------------------------ */
+a {
+  color: #000; }
+  @media screen and (min-width: 741px) {
+    a {
+      -webkit-transition: opacity 0.3s;
+      -moz-transition: opacity 0.3s;
+      -ms-transition: opacity 0.3s;
+      -o-transition: opacity 0.3s;
+      transition: opacity 0.3s; }
+      a, a:link, a:active, a:visited {
+        text-decoration: none; }
+      a:hover {
+        opacity: 0.6; } }
+  @media screen and (max-width: 740px) {
+    a, a:link, a:active, a:visited {
+      text-decoration: none; } }
+
+label {
+  cursor: pointer; }
+  @media screen and (min-width: 741px) {
+    label {
+      -webkit-transition: opacity 0.3s;
+      -moz-transition: opacity 0.3s;
+      -ms-transition: opacity 0.3s;
+      -o-transition: opacity 0.3s;
+      transition: opacity 0.3s; }
+      label, label:link, label:active, label:visited {
+        text-decoration: none; }
+      label:hover {
+        opacity: 0.6; } }
+  @media screen and (max-width: 740px) {
+    label, label:link, label:active, label:visited {
+      text-decoration: none; } }
+
+/*  input , textarea Font
+------------------------------------------ */
+select, button, input, textarea {
+  font-family: "Hiragino Maru Gothic W4 JIS2004", "fooooo", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+@media screen and (max-width: 740px) {
+  a, label, select, button, input, textarea {
+    -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4); } }
+/*
+#overview
+ベースレイアウト
+*/
+@media screen and (min-width: 741px) {
+  .container {
+    width: 1040px; } }
+/*  common style sheets */
+header {
+  background-color: #f00;
+  color: #000; }
+
+footer {
+  background-color: #f00;
+  color: #000; }

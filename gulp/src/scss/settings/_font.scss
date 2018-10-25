@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url(../fonts/NotoSansCJKjp-Medium-subset.woff) format('woff');
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url(../fonts/NotoSansCJKjp-DemiLight-subset.woff) format('woff');
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url(../fonts/NotoSansCJKjp-Bold-subset.woff) format('woff');
+  font-weight: 700;
+}
+
+/*
+#overview
+フォント設定
+
+フォントに関する変数を設定しています。
+*/
+
+/*
+#styleguide
+font-family
+
+$font_family_default: "Hiragino Maru Gothic W4 JIS2004", "fooooo", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_family_meiryo: "メイリオ", "Meiryo", "Osaka", Verdana, "ＭＳ Ｐゴシック", "MS P Gothic", Arial, Helvetica, sans-serif;
+$font_family_number: Arial, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+
+```
+none
+```
+*/
+//$font_family_default: "Hiragino Maru Gothic W4 JIS2004", "fooooo", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_family_default: "Hiragino Maru Gothic W4 JIS2004", "fooooo", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_family_meiryo: "メイリオ", "Meiryo", "Osaka", Verdana, "ＭＳ Ｐゴシック", "MS P Gothic", Arial, Helvetica, sans-serif;
+$font_family_number: Arial, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$font_family_noto: 'Noto Sans JP', sans-serif, Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$font_family_hiragino: 'Arial','HiraKakuPro-W3','ヒラギノ角ゴ ProN W3', 'Noto Sans JP', YuGothic,'Yu Gothic', 'メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;;
+
+/*
+#styleguide
+font-size
+
+$font_size_default: 14px;
+$font_size_l: 18px;
+$font_size_m: 16px;
+$font_size_s: 13px;
+
+```
+none
+```
+*/
+$font_size_default: 17px;
+$font_size_l: 22px;
+$font_size_m: 19px;
+$font_size_s: 13px;
+$font_size_default_sp: 15px;
+
+/*
+#styleguide
+line-height
+
+$line_height_default: 1.6;
+
+```
+none
+```
+*/
+$line_height_default: 1.6;
+
+/*
+#styleguide
+font-weight
+
+$font_weight_default: 500;
+
+```
+none
+```
+*/
+
+$font_weight_default: 300;

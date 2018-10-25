@@ -1,0 +1,298 @@
+@charset "UTF-8";
+
+// ---------------------------------------------------------------
+//
+//  ライブラリ
+//
+// ---------------------------------------------------------------
+
+
+//  ClearFix
+// ---------------------------------------------------------------
+
+@mixin ClearFix {
+  min-height: 1px;
+
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+  }
+
+  * html & {
+    height: 1px;
+  }
+
+}
+
+//  ClearInlineSpace
+// ---------------------------------------------------------------
+
+@mixin ClearInlineSpace {
+  letter-spacing: -.4em;
+
+  & > * {
+    letter-spacing: normal;
+  }
+
+}
+
+
+//  Responsive
+// ---------------------------------------------------------------
+
+@mixin ResponsiveMinWidth($break: $break_point_default+1) {
+  @media screen and (min-width : $break+"px") {
+    @content;
+  }
+}
+
+@mixin ResponsiveMaxWidth($break: $break_point_default) {
+  @media screen and (max-width : $break+"px") {
+    @content;
+  }
+}
+
+@mixin ResponsiveForPc(){
+  @include ResponsiveMinWidth(){
+    @content;
+  };
+}
+
+@mixin ResponsiveForTb(){
+    @media screen and (max-width : 991px) {
+    @content;
+  }
+}
+
+@mixin ResponsiveForSp(){
+  @include ResponsiveMaxWidth(){
+    @content;
+  };
+}
+
+@mixin ResponsiveForLargePC($break: 1500) {
+  @media screen and (min-width : $break+"px") {
+    @content;
+  }
+}
+
+//  共通幅
+// ---------------------------------------------------------------
+
+@mixin CommonWidth {
+  width: $contents_width;
+  margin: auto;
+}
+
+//  レイアウト（テーブル仕様）
+// ---------------------------------------------------------------
+
+@mixin LayoutTable($width: 100%) {
+  display: table;
+  width: $width;
+  table-layout: fixed;
+}
+
+//  @param $va: vertical-align: top;
+// ------------------------------------------
+
+@mixin LayoutCell($va: top) {
+  vertical-align: $va;
+  display: table-cell;
+}
+
+//  レイアウト（float仕様）
+//  ClearFixを継承
+// ---------------------------------------------------------------
+
+@mixin LayoutBox {
+  @include ClearFix;
+  display: block;
+}
+
+@mixin LayoutFl($width: auto) {
+  width: $width;
+  float: left;
+}
+
+@mixin LayoutFr($width: auto) {
+  width: $width;
+  float: left;
+}
+
+//  要素均等幅配置用（アイテム一覧系）
+//  親要素はLayoutBoxを継承
+//  直属の子要素はLayoutFlを継承
+// ---------------------------------------------------------------
+
+@mixin EqualList($col-num: 1,$margin: 0){
+  @include LayoutBox;
+  margin-left: -$margin;
+  margin-bottom: -$margin;
+
+  & > * {
+    //「%」と結合する際にStringになってしまうのでunquoteする
+    @include LayoutFl( unquote( (100 / $col-num)+"%" ) );
+    @include _box-sizing;
+    margin-bottom: $margin;
+    padding-left: $margin;
+  }
+
+}
+
+//  擬似要素ベース :after :before
+// ---------------------------------------------------------------
+
+@mixin PseudoElements($display: block) {
+  content: " ";
+  display: $display;
+}
+
+
+//  absolute要素のセンター配置用
+//  引数にmax-widthとmax-height指定
+// ---------------------------------------------------------------
+
+@mixin AbsoluteCenter($max-width: 100%, $max-height: 100%){
+  max-width: $max-width;
+  max-height: $max-height;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+//  アンカータグ、ホバー設定クラス
+// ---------------------------------------------------------------
+
+@mixin HoverUnder {
+  @include ResponsiveForPc () {
+    &, &:link, &:active, &:visited  {
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin HoverNone {
+  &, &:link, &:active, &:visited  {
+    text-decoration: underline;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin HoverOpacity($opacity: .6) {
+  @include ResponsiveForPc () {
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    &, &:link, &:active, &:visited  {
+      text-decoration: none;
+    }
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+  @include ResponsiveForSp () {
+    &, &:link, &:active, &:visited  {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin HoverOpacityTrans($time: .3s, $opacity: .5){
+  -webkit-transition: opacity $time;
+  -moz-transition: opacity $time;
+  -ms-transition: opacity $time;
+  -o-transition: opacity $time;
+  transition: opacity $time;
+  @include HoverOpacity($opacity);
+}
+
+@mixin HoverBehaviorSink($border-width: 4px) {
+  &:hover {
+    border-bottom: none;
+    border-top: $border-width solid $background_color_light;
+  }
+}
+
+//  text decorations
+// ---------------------------------------------------------------
+
+@mixin HeadingBorder5($border-color: $theme_color_default) {
+  border-left: 5px solid $border-color;
+  padding-left: 15px;
+}
+
+@mixin HeadingUnderDotted($border-color: $border_color_default) {
+  border-bottom: 1px dashed $border-color;
+}
+
+@mixin PlaceHolderColor($color) {
+  &:placeholder-shown {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color:$color;
+  }
+  &:-moz-placeholder {
+    color:$color;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    color:$color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color:$color;
+  }
+}
+
+@mixin TextOverFlowEllipsis () {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+@mixin TextClamp ($line: 2) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+
+
+// heading
+// ---------------------------------------------------------------
+
+@mixin page_title(){
+  font-size: $font_size_xxl;
+  color: $theme_color_default;
+  font-weight: bold;
+  border-bottom: 4px solid $theme_color_default;
+  padding-bottom: 10px;
+}
+
+@mixin sub_heading() {
+  font-size: $font_size_l;
+  color: $theme_color_default;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+@mixin sub_heading_under() {
+  font-size: $font_size_m;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

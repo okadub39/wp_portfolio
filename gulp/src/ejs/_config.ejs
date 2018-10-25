@@ -1,0 +1,64 @@
+<%
+
+var page = page ? page : 'index';
+
+// ページデータ生成
+var pagesJson = include('../router/index.json');
+var pagesData = JSON.parse(pagesJson);
+var pageData = searchPageData(pagesData, page);
+
+// パスの計算
+var path = '';
+var hierarchy = strCount(page, '/');
+if(hierarchy == 0){
+  path = '.';
+} else {
+  for(var i = 0; i < hierarchy; i++){
+    if(i == hierarchy - 1){
+      path += '..';
+    } else {
+      path += '../';
+    }
+  }
+}
+
+switch (ENV) {
+  case 'local':
+    break;
+  case 'development':
+    break;
+  case 'staging':
+    break;
+  case 'production':
+    break;
+}
+
+// 定数出力
+PAGE_DATA = pageData
+PATH = path;
+
+/**
+ * 特定文字数のカウント
+ * @param all
+ * @param part
+ * @returns {Number}
+ */
+function strCount(all, part) {
+  return (all.match(new RegExp(part, "g")) || []).length;
+}
+
+/**
+ * ページデータ検索
+ * @param data
+ * @param pageName
+ * @returns {*}
+ */
+function searchPageData (data, pageName) {
+  for(var i = 0; i < data.length; i++) {
+    if (data[i].name == pageName) {
+      return data[i]
+    }
+  }
+}
+
+%>

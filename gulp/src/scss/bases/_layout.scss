@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/*
+#overview
+ベースレイアウト
+*/
+
+
+@include ResponsiveForPc(){
+  .container {
+    width: $contents_width;
+  }
+
+}
+
+@include ResponsiveForSp(){
+
+}

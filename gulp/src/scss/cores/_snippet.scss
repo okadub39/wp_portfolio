@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+/*
+#overview
+スニペット
+
+scssスニペット
+命名規則はアンダースコアです。
+*/
+
+/*
+#styleguide
+_radius($num: 0)
+
+  -webkit-border-radius: $num;
+  -moz-border-radius: $num;
+  border-radius: $num;
+```
+none
+```
+*/
+@mixin _radius($num: 0) {
+  -webkit-border-radius: $num;
+  -moz-border-radius: $num;
+  border-radius: $num;
+}
+
+/*
+#styleguide
+_box-sizing($param: border-box)
+
+```
+none
+```
+*/
+@mixin _box_sizing($param: border-box){
+  -webkit-box-sizing: $param;
+  -moz-box-sizing: $param;
+  box-sizing: $param;
+}
+
+/*
+#styleguide
+_square($num: 0)
+
+widthとheightに同じ値を与えます。
+```
+none
+```
+*/
+@mixin _square($num: 0) {
+  width: $num;
+  height: $num;
+}
+
+/*
+#styleguide
+_transition($prop: all, $duration: 0, $delay: 0)
+
+```
+none
+```
+*/
+@mixin _transition($prop: all, $duration: 0, $delay: 0){
+  -webkit-transition: $prop $duration $delay;
+  -moz-transition: $prop $duration $delay;
+  -o-transition: $prop $duration $delay;
+  transition: $prop $duration $delay;
+}

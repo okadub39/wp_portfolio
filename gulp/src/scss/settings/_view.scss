@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/*
+#overview
+サイト幅設定
+
+サイトの幅に関する変数
+*/
+
+/*
+#styleguide
+ページ幅
+
+$page_min_width : ページの最小幅 1200px;
+$contents_max_width  : ページ内コンテンツの幅 900px;
+```
+none
+```
+*/
+$page_min_width: 1080px;
+$contents_width: 1040px;
+
+/*
+#styleguide
+ブレークポイント
+
+ピクセル無しで記述
+$break_point_default : ブレークポイント
+```
+none
+```
+*/
+$break_point_default: 740;

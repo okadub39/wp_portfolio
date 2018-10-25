@@ -1,0 +1,1 @@
+const gulp   = require('gulp');const rimraf = require('rimraf');const config = require('./config');gulp.task('clean', function(cb){  rimraf(config.settings.distPath, cb);});
